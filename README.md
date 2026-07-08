@@ -1,6 +1,8 @@
-#Student Result Management System
+# Student Result Management System
+
 ## Description
 A Python project to calculate student results.
+
 ## Features
 - Student Details
 - Total Marks
@@ -16,4 +18,4 @@ A Python project to calculate student results.
 - GitHub
 
 ## Author
-** Shija Janarthanan **
+**Shija Janarthanan**
