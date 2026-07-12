@@ -1,0 +1,109 @@
+def menu():
+    print("==========================================\n")
+    print("    Student Result Management System   \n")
+    print("==========================================")
+    print("\n------1.Add Student-------")
+    print("\n------2.View Student------")
+    print("\n------3.Exit--------------")
+    print("==========================================\n")
+def calculate_total(marks):
+    total = sum(marks)
+    return total
+def calculate_percentage(total):
+    percentage = total/5
+    return percentage
+def find_result(marks):
+    for  mark in marks:
+        if mark<35:
+            return "Fail"
+    return "Pass"
+def find_highest_lowest(marks):
+    highest = max(marks)
+    lowest = min(marks)
+    return highest,lowest
+def find_grade(percentage):
+    if percentage>=90:
+        grade="A+"
+    elif percentage>=80:
+        grade= "A"
+    elif percentage>=70:
+        grade = "B"
+    elif percentage>=60:
+        grade = "C"
+    elif percentage>=50:
+        grade = "D"
+    elif percentage<50:
+        grade = "E"
+    elif percentage<35:
+        grade = "F"
+    return grade
+student = None
+def main():
+    student = None
+    while True:
+        menu()
+        choice = int(input("Enter your choice(1-3):"))
+        if choice==1:
+            student_name = input("Enter student name:")
+            reg_no = int(input("Enter Student register name:"))
+            english_marks = int(input("Enter english marks:"))
+            lang11_marks = int(input("Enter language 11  marks:"))
+            science_marks = int(input("Enter science marks:"))
+            maths_marks = int(input("Enter maths marks:"))
+            social_marks = int(input("Enter social marks:"))
+            print("Student added successfully!")
+            marks=[english_marks,lang11_marks,science_marks,social_marks,maths_marks]
+           
+            
+            student = {
+                        "name": student_name,
+                        "reg_no": reg_no,
+                        "english": english_marks,
+                        "language": lang11_marks,
+                        "science": science_marks,
+                        "social": social_marks,
+                         "maths": maths_marks
+                        }
+            total = calculate_total(marks)
+            percentage = calculate_percentage(total)
+            result = find_result(marks)
+            if result=="Pass":
+                grade = find_grade(percentage)
+            else:
+                grade = "No grade"
+            highest,lowest=find_highest_lowest(marks)
+            student["total"] = total
+            student["percentage"] = percentage
+            student["result"] = result
+            student["grade"]  =grade
+            student["highest"] = highest
+            student["lowest"] = lowest
+                    
+           
+        elif choice==2:
+            if student is None:
+                print("No student data available.")
+            else:
+                print("\n===============Student Details==================")
+                print("Student Name:    ",     student["name"])
+                print("Register Number: ",   student["reg_no"])
+                print("English Marks:   ",  student["english"])
+                print("Language Marks:  ",   student["language"])
+                print("Science Marks:   ",   student["science"])
+                print("Social Marks:    ",   student["social"])
+                print("Maths Marks:     ",  student["maths"])
+                print("Total:           ", student["total"])
+                print("Percentage:      ", student["percentage"])
+                print("Result:          ", student["result"])
+                print("Grade:           ", student["grade"])
+                print("Highest Marks:   ", student["highest"])
+                print("Lowest Marks:    ", student["lowest"])
+                      
+        elif choice==3:
+            print("Exit")
+            break
+        
+main()
+
+
+
