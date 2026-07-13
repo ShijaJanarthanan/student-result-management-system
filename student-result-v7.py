@@ -4,7 +4,8 @@ def menu():
     print("==========================================")
     print("\n------1.Add Student-------")
     print("\n------2.View Student------")
-    print("\n------3.Exit--------------")
+    print("\n------3.Search  Student------")
+    print("\n------4.Exit--------------")
     print("==========================================\n")
 def calculate_total(marks):
     total = sum(marks)
@@ -42,7 +43,7 @@ def main():
     students = []
     while True:
         menu()
-        choice = int(input("Enter your choice(1-3):"))
+        choice = int(input("Enter your choice(1-4):"))
         if choice==1:
             student_name = input("Enter student name:")
             reg_no = int(input("Enter Student register name:"))
@@ -100,8 +101,31 @@ def main():
                     print("Grade:           ", student["grade"])
                     print("Highest Marks:   ", student["highest"])
                     print("Lowest Marks:    ", student["lowest"])
+        elif choice ==3:
+            search_reg = int(input("Enter Register Number to Search: "))
+            found = False
+            for student in students:
+                if student["reg_no"] == search_reg:
+                    print("\n===============Student Details==================")
+                    print("Student Name:    ", student["name"])
+                    print("Register Number: ", student["reg_no"])
+                    print("English Marks:   ", student["english"])
+                    print("Language Marks:  ", student["language"])
+                    print("Science Marks:   ", student["science"])
+                    print("Social Marks:    ", student["social"])
+                    print("Maths Marks:     ", student["maths"])
+                    print("Total:           ", student["total"])
+                    print("Percentage:      ", student["percentage"])
+                    print("Result:          ", student["result"])
+                    print("Grade:           ", student["grade"])
+                    print("Highest Marks:   ", student["highest"])
+                    print("Lowest Marks:    ", student["lowest"])
                    
-        elif choice==3:
+                    found = True
+                    break
+            if not found:
+                print("Student not found.")             
+        elif choice==4:
             print("Exit")
             break
         
