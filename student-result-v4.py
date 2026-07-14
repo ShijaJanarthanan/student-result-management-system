@@ -66,6 +66,3 @@ def main():
     highest_marks, lowest_marks = find_highest_lowest(marks)
     display_result(student_name, reg_no, total, percentage,result, grade, highest_marks, lowest_marks)
 main()   
-    
-
-
