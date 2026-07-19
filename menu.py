@@ -1,0 +1,11 @@
+def menu():
+    print("==========================================\n")
+    print("    Student Result Management System   \n")
+    print("==========================================")
+    print("\n------1.Add Student-------")
+    print("\n------2.View Student------")
+    print("\n------3.Search  Student------")
+    print("\n------4.Update Student--------")
+    print("\n------5.Delete Student--------")
+    print("\n------6.Exit--------------")
+    print("==========================================\n")
